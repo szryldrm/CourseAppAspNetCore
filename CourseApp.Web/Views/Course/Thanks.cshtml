@@ -1,0 +1,27 @@
+@model Student
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Apply</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="text-center">
+        <h2>Teşekkürler, @Model.Name</h2>
+        <hr />
+        @if (Model.WillAttend == true)
+        {
+            @:Kursa Katılmış olduğundan dolayı mutlu olduk.
+        }
+        else
+        {
+            @:Kursa Katılmadığından Dolayı Üzgünüz.
+        }
+        Kursa Katılanları <a asp-action="List" class="nav-link">Listele</a>
+    </div>
+</body>
+</html>
